@@ -1,0 +1,27 @@
+{
+  "audit_timestamp": "2026-10-24T09:54:53+0700",
+  "database_path": "E:\\KL_TN\\users.db",
+  "working_directory": "E:\\KL_TN",
+  "elapsed_seconds": 30.89,
+  "concurrency_workers": 8,
+  "summary": {
+    "total_products": 500,
+    "valid_images_found": 494,
+    "thumbnails_cached": 494,
+    "total_missing_images": 6,
+    "known_dataset_missing": 6,
+    "unexpected_missing": 0,
+    "portability_issues_count": 0,
+    "invalid_records_count": 0
+  },
+  "known_missing_ids": [
+    179208001,
+    216961011,
+    218354021,
+    241602023,
+    396135047,
+    396135048
+  ],
+  "unexpected_missing_ids": [],
+  "issues": []
+}

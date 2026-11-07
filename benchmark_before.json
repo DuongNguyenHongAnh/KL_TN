@@ -1,0 +1,268 @@
+{
+  "label": "before",
+  "timestamp": "2026-10-24T09:42:11+0700",
+  "environment": {
+    "os": "Windows-11-10.0.26300-SP0",
+    "python": "3.13.12",
+    "cpu_count": 12,
+    "ram_initial_mb": 23.27,
+    "ram_peak_mb": 676.02
+  },
+  "data_scale": {
+    "users": 100,
+    "products": 500,
+    "interactions": 652,
+    "orders": 108,
+    "order_items": 110,
+    "cart": 37,
+    "user_profiles": 78
+  },
+  "startup": {
+    "db_import_ms": 1755.3,
+    "backend_cold_startup_ms": 6263.32,
+    "ram_after_backend_mb": 214.68
+  },
+  "db_and_n_plus_1": {
+    "get_user_orders_10_orders": {
+      "orders_count": 10,
+      "total_sql_statements": 3,
+      "select_statements": 2,
+      "pragma_statements": 1,
+      "cold_ms": 3.29,
+      "warm": {
+        "n": 10,
+        "min_ms": 1.62,
+        "median_ms": 1.85,
+        "mean_ms": 1.91,
+        "p95_ms": 2.29,
+        "max_ms": 2.29
+      }
+    },
+    "hybrid_recommend_in_process": {
+      "total_sql_statements": 0,
+      "select_statements": 0,
+      "pragma_statements": 0,
+      "cold_ms": 1.06,
+      "warm": {
+        "n": 10,
+        "min_ms": 0.45,
+        "median_ms": 0.52,
+        "mean_ms": 0.6,
+        "p95_ms": 1.1,
+        "max_ms": 1.1
+      }
+    }
+  },
+  "api_endpoints": {
+    "GET /api/products (page 1, limit=24)": {
+      "status_code": 200,
+      "payload_bytes": 11842,
+      "cold_ms": 16.03,
+      "warm": {
+        "n": 10,
+        "min_ms": 5.23,
+        "median_ms": 5.77,
+        "mean_ms": 5.87,
+        "p95_ms": 6.98,
+        "max_ms": 6.98
+      }
+    },
+    "GET /api/products (search+category)": {
+      "status_code": 200,
+      "payload_bytes": 11131,
+      "cold_ms": 9.76,
+      "warm": {
+        "n": 10,
+        "min_ms": 7.14,
+        "median_ms": 8.38,
+        "mean_ms": 8.4,
+        "p95_ms": 10.42,
+        "max_ms": 10.42
+      }
+    },
+    "GET /api/recommendations/honganh (hybrid)": {
+      "status_code": 200,
+      "payload_bytes": 5461,
+      "cold_ms": 26.95,
+      "warm": {
+        "n": 10,
+        "min_ms": 6.35,
+        "median_ms": 7.07,
+        "mean_ms": 7.01,
+        "p95_ms": 7.57,
+        "max_ms": 7.57
+      }
+    },
+    "GET /api/recommendations/honganh (als cold user)": {
+      "status_code": 200,
+      "payload_bytes": 5640,
+      "cold_ms": 7.93,
+      "warm": {
+        "n": 10,
+        "min_ms": 6.39,
+        "median_ms": 7.13,
+        "mean_ms": 7.62,
+        "p95_ms": 12.08,
+        "max_ms": 12.08
+      }
+    },
+    "GET /api/recommendations/hm_warm_user (als)": {
+      "status_code": 200,
+      "payload_bytes": 4287,
+      "cold_ms": 8.22,
+      "warm": {
+        "n": 10,
+        "min_ms": 7.06,
+        "median_ms": 7.67,
+        "mean_ms": 7.71,
+        "p95_ms": 8.14,
+        "max_ms": 8.14
+      }
+    },
+    "GET /api/recommendations/honganh (svd)": {
+      "status_code": 200,
+      "payload_bytes": 5650,
+      "cold_ms": 121.94,
+      "warm": {
+        "n": 10,
+        "min_ms": 6.54,
+        "median_ms": 7.23,
+        "mean_ms": 7.16,
+        "p95_ms": 7.55,
+        "max_ms": 7.55
+      }
+    },
+    "GET /api/recommendations/honganh (knn)": {
+      "status_code": 200,
+      "payload_bytes": 5642,
+      "cold_ms": 7.26,
+      "warm": {
+        "n": 10,
+        "min_ms": 6.56,
+        "median_ms": 6.98,
+        "mean_ms": 6.97,
+        "p95_ms": 7.71,
+        "max_ms": 7.71
+      }
+    },
+    "GET /api/products/108775015/similar-image (ResNet50)": {
+      "status_code": 200,
+      "payload_bytes": 3111,
+      "cold_ms": 12.16,
+      "warm": {
+        "n": 10,
+        "min_ms": 2.79,
+        "median_ms": 3.38,
+        "mean_ms": 3.41,
+        "p95_ms": 4.09,
+        "max_ms": 4.09
+      }
+    },
+    "POST /api/products/similar-by-image (ResNet50)": {
+      "status_code": 200,
+      "payload_bytes": 4045,
+      "cold_ms": 11243.75,
+      "warm": {
+        "n": 10,
+        "min_ms": 80.54,
+        "median_ms": 88.61,
+        "mean_ms": 90.14,
+        "p95_ms": 104.7,
+        "max_ms": 104.7
+      }
+    },
+    "GET /api/products/108775015/image": {
+      "status_code": 200,
+      "payload_bytes": 2017,
+      "cold_ms": 8.82,
+      "warm": {
+        "n": 10,
+        "min_ms": 3.39,
+        "median_ms": 3.9,
+        "mean_ms": 3.88,
+        "p95_ms": 4.43,
+        "max_ms": 4.43
+      }
+    }
+  },
+  "streamlit_ui": {
+    "login_page": {
+      "cold_ms": 298.1,
+      "warm": {
+        "n": 3,
+        "min_ms": 29.14,
+        "median_ms": 30.11,
+        "mean_ms": 31.87,
+        "p95_ms": 36.36,
+        "max_ms": 36.36
+      },
+      "inline_payload_bytes": 106387
+    },
+    "home_page": {
+      "cold_ms": 269.55,
+      "warm": {
+        "n": 5,
+        "min_ms": 80.49,
+        "median_ms": 81.52,
+        "mean_ms": 83.85,
+        "p95_ms": 90.8,
+        "max_ms": 90.8
+      },
+      "sql_statements_on_cold_render": 14,
+      "sql_selects_on_cold_render": 7,
+      "sql_pragmas_on_cold_render": 7,
+      "sql_statements_on_warm_rerun": 6,
+      "sql_selects_on_warm_rerun": 3,
+      "sql_pragmas_on_warm_rerun": 3
+    },
+    "explore_open": {
+      "cold_ms": 241.85,
+      "html_payload_bytes": 66842
+    },
+    "explore_search": {
+      "n": 5,
+      "min_ms": 115.25,
+      "median_ms": 208.09,
+      "mean_ms": 223.06,
+      "p95_ms": 343.02,
+      "max_ms": 343.02
+    },
+    "explore_category_filter": {
+      "n": 5,
+      "min_ms": 104.48,
+      "median_ms": 210.48,
+      "mean_ms": 183.72,
+      "p95_ms": 253.75,
+      "max_ms": 253.75
+    },
+    "explore_pagination": {
+      "n": 6,
+      "min_ms": 152.06,
+      "median_ms": 177.16,
+      "mean_ms": 172.71,
+      "p95_ms": 184.36,
+      "max_ms": 184.36
+    },
+    "product_detail_open": {
+      "n": 3,
+      "min_ms": 108.38,
+      "median_ms": 151.3,
+      "mean_ms": 166.7,
+      "p95_ms": 240.41,
+      "max_ms": 240.41
+    },
+    "add_to_cart_action": {
+      "n": 3,
+      "min_ms": 180.83,
+      "median_ms": 286.25,
+      "mean_ms": 308.96,
+      "p95_ms": 459.79,
+      "max_ms": 459.79
+    },
+    "recommendations_tab_cold_ms": 258.06
+  },
+  "payload_sizes": {
+    "ui_styles_py_file_bytes": 136136,
+    "sample_card_image_uri_chars": 2715
+  }
+}

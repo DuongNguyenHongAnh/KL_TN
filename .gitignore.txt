@@ -1,0 +1,27 @@
+
+# Python
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# Visual Studio / WinForms
+.vs/
+**/bin/
+**/obj/
+
+# Temporary files
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Sensitive information
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.pem
